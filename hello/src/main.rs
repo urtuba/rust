@@ -101,6 +101,24 @@ fn main(){
     println!("World: {}", world);
     print_blank_line();
 
+    // function calls using is_even and is_odd defined below
+    let a = 10;
+    let b = 11;
+
+    println!("{} is even: {}", a, is_even(a));
+    println!("{} is odd: {}", a, is_odd(a));
+    println!("{} is even: {}", b, is_even(b));
+    println!("{} is odd: {}", b, is_odd(b));
+}
+
+pub fn is_even(n: i32) -> bool {
+    n % 2 == 0 // no semicolon means this is the return value
+}
+
+pub fn is_odd(n: i32) -> bool {
+    n % 2 != 0 // no semicolon means this is the return value
+}
+
 // blank line printer
 fn print_blank_line() {
     println!(" ");
