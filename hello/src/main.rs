@@ -1,10 +1,12 @@
+mod utils;
+
 fn main(){
     let a = 10;
     let b = 20;
     let c = a + b;
 
     println!("The sum of {} and {} is {}", a, b, c);
-    print_blank_line();
+    utils::print_blank_line();
 
     // numbers
     let unsigned: u8 = 255;
@@ -21,7 +23,7 @@ fn main(){
     let a: u128 = 340282366920938463463374607431768211455;
 
     println!("Biggest possible integer: {}", a);
-    print_blank_line();
+    utils::print_blank_line();
 
     // chars
     let c = 'c';
@@ -29,13 +31,13 @@ fn main(){
 
     println!("Char: {}", c);
     println!("Heart eyed cat: {}", heart_eyed_cat);
-    print_blank_line();
+    utils::print_blank_line();
 
     // booleans
     let t = true;
 
     println!("Boolean: {}", t);
-    print_blank_line();
+    utils::print_blank_line();
 
     // tuples
     let tup: (i32, f64, u8) = (500, 6.4, 1);
@@ -44,7 +46,7 @@ fn main(){
     println!("The value of tup is: {:?}", tup);
     println!("The value of tup is: ({}, {}, {})", tup.0, tup.1, tup.2);
     println!("The value of tup is: ({}, {}, {})", x, y, z);
-    print_blank_line();
+    utils::print_blank_line();
 
     // define 2 floats explicitly with types and divide them then print
     let a: f32 = 10.0;
@@ -52,7 +54,7 @@ fn main(){
     let c = a / b;
 
     println!("The result of {} / {} is {}", a, b, c);
-    print_blank_line();
+    utils::print_blank_line();
 
     // arrays
     let a = [1, 2, 3, 4, 5];
@@ -65,7 +67,7 @@ fn main(){
     println!("Length of array b: {}", b.len());
     println!("Array c: {:?}", c);
     println!("Length of array c: {}", c.len());
-    print_blank_line();
+    utils::print_blank_line();
 
     // access array elements
     let first = a[0];
@@ -73,7 +75,7 @@ fn main(){
 
     println!("First element: {}", first);
     println!("Second element: {}", second);
-    print_blank_line();
+    utils::print_blank_line();
 
     // string
     // let s = "Hello, world!";
@@ -99,27 +101,14 @@ fn main(){
 
     println!("Hello: {}", hello);
     println!("World: {}", world);
-    print_blank_line();
+    utils::print_blank_line();
 
     // function calls using is_even and is_odd defined below
     let a = 10;
     let b = 11;
 
-    println!("{} is even: {}", a, is_even(a));
-    println!("{} is odd: {}", a, is_odd(a));
-    println!("{} is even: {}", b, is_even(b));
-    println!("{} is odd: {}", b, is_odd(b));
-}
-
-pub fn is_even(n: i32) -> bool {
-    n % 2 == 0 // no semicolon means this is the return value
-}
-
-pub fn is_odd(n: i32) -> bool {
-    n % 2 != 0 // no semicolon means this is the return value
-}
-
-// blank line printer
-fn print_blank_line() {
-    println!(" ");
+    println!("{} is even: {}", a, utils::number::is_even(a));
+    println!("{} is odd: {}", a, utils::number::is_odd(a));
+    println!("{} is even: {}", b, utils::number::is_even(b));
+    println!("{} is odd: {}", b, utils::number::is_odd(b));
 }
